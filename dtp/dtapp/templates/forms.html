@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        h1{
+        font-family:roboto;
+        }
+        .fmain{
+        width:33%;
+        margin-left: 30%;
+       
+        background-color: aqua;
+       
+    border-radius: 104px / 400px;
+
+  
+        }
+        .form{
+            position: relative;
+            padding-left: 175px;
+        }
+    </style>
+</head>
+<body>
+<div class="fmain">
+
+<div class="form">
+<form action="forms" method="post" >
+    {% csrf_token %}
+    <h1>Register</h1>
+    <input type="text" name="username" placeholder="Enter your name"><br>
+    <input type="text" name="Phonenumber" placeholder="Enter your mobile number"><br>
+    <input type="email" name="email" placeholder="Enter your Email ID"><br>
+    <input type="password" name="password" placeholder="Enter your password"><br>
+    <input type="password" name="cpassword" placeholder="confirm password"><br>
+    <label >Gender</label><br>
+    <label>Male</label>
+    <input type="radio" name="male" placeholder="Male"><br>
+    <label>Female</label>
+    <input type="radio" name="female" placeholder="Female"><br>
+    <label>Other</label>
+    <input type="radio" name="other" placeholder="Other"><br>
+    <input type="date" name="date" placeholder="Enter your date of birth"><br>
+    <input type="file" name="img" placeholder="attach your pic"><br>
+    <input type="submit"><br>
+
+
+</form>
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}
+
+</div>
+</div>
+
+</body>
+</html>
